@@ -16,9 +16,9 @@ const SpeechToText = () => {
   const stopRecording = () => {
     // Stop recording logic
 
-      // Set recordedSpeechData with the captured speech data
-      const capturedSpeechData = ... // Capture and store the recorded speech data
-      setRecordedSpeechData(capturedSpeechData);
+    /* Set recordedSpeechData with the captured speech data
+    const capturedSpeechData = ...  Capture and store the recorded speech data
+    setRecordedSpeechData(capturedSpeechData);*/
 
     // Send recorded speech to the Java backend
     fetch('/api/speech-to-text', {
