@@ -44,14 +44,12 @@ const MainActivity = () => {
     };
 
     startSynthesizing = async () => {
-        // Start synthesizing logic
         try {
             const response = await axios.post('http://localhost:8080/startSynthesizing');
 
             let text = response.data.get('chatbotResponse');
             console.log('Real-time transcription of synthesized speech:', text);
 
-            // Concatenate the new text with the current transcript
             setTranscript(prevTranscript =>
                 (prevTranscript ? prevTranscript + "\n" : "") + "Chatbot: " + text
             );
@@ -60,19 +58,16 @@ const MainActivity = () => {
             console.error('Failed to start synthesizing', error);
         }
 
-        // Update the state to indicate that synthesizing is active
         setIsSynthesizing(true);
     };
 
     stopSynthesizing = () => {
-        // Stop synthesizing logic
         try {
             axios.post('http://localhost:8080/stopSynthesizing');
         } catch (error) {
             console.error('Failed to stop recording', error);
         }
 
-        // Update the state to indicate that synthesizing is inactive
         setIsSynthesizing(false);
     };
 
